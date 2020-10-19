@@ -1,0 +1,29 @@
+body {
+    font-family: 'Google Sans', Roboto, Noto Sans, Noto Sans JP, Noto Sans KR, Noto Naskh Arabic,
+    Noto Sans Thai, Noto Sans Hebrew, Noto Sans Bengali, sans-serif;
+}
+
+.card {
+    padding: 0;
+}
+
+.card-header {
+    border-bottom: 1px solid #616161;
+    background: rgba(0, 0, 0, .6);
+    text-align: center;
+    padding: 15px;
+    color: white;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.file-names {
+    display: none;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-around;
+}

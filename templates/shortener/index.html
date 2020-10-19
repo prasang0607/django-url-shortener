@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <!-- Content wrapper -->
+    <div class="content-wrapper">
+        <div class="content">
+            <!-- Cards -->
+            <div class="container">
+                {% include 'partials/_alert.html' %}
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header font-weight-medium">
+                                Website URL
+                            </div>
+                            <div class="card-body">
+                                <form action='{% url 'index' %}' method="POST">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        <label for="short_code" class='required'>Short Code</label>
+                                        <input type="text" class="form-control" name="short_code" id="short_code"
+                                               required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="website_url" class='required'>Website URL</label>
+                                        <input type="url" class="form-control" name="website_url" id="website_url"
+                                               required>
+                                    </div>
+                                    <input type="submit" value="Submit" class="btn btn-block btn-primary">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header font-weight-medium">
+                                File
+                            </div>
+                            <div class="card-body">
+                                <form action='{% url 'index' %}' enctype="multipart/form-data" method="POST">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        <label for="short_code" class="required">Short Code</label>
+                                        <input type="text" class="form-control" name="short_code" id="short_code" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="file_upload" class="required">File</label>
+                                        <div class="custom-file">
+                                            <input type="file" id="file_upload" name="file_upload">
+                                            <label for="file_upload" class="btn-block text-truncate">
+                                                Choose file
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <input type="submit" value="Submit" class="btn btn-block btn-primary">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block cscript %}
+    <script src="{% static 'js/index.js' %}"></script>
+{% endblock %}

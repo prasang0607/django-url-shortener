@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="content-wrapper">
+        <div class="content">
+            <div class="container">
+                <div class="alert alert-success d-none" role="alert">
+                    Short URL copied to clipboard.
+                </div>
+                <div class="row">
+                    <div class="col-md-6 text-center mx-auto">
+                        <h3 class="my-20">Your Short URL</h3>
+                        <input type="text"
+                               id="your-url"
+                               class="form-control form-group-lg font-size-20 text-center font-weight-medium my-15 py-20"
+                               value="{{ short_url }}" readonly>
+                        <div class="row">
+                            <div class="col-md-8 mx-auto my-20">
+                                <div id="button-wrapper" class="d-flex justify-content-around">
+                                    <button id="copy-url" class="btn btn-primary">Copy URL</button>
+                                    <button id="open-url" class="btn btn-primary">Open URL</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block cscript %}
+    <script src="{% static 'js/your-url.js' %}"></script>
+{% endblock %}

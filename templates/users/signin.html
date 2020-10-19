@@ -1,0 +1,47 @@
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="{% static 'css/halfmoon.min.css' %}" rel="stylesheet"/>
+    <link rel="stylesheet" href="{% static 'css/google_sans.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>URL Shortener</title>
+</head>
+<body>
+<div class="content-wrapper">
+    <div class="content">
+        <div class="container">
+            {% include 'partials/_alert.html' %}
+            <div class="row">
+                <div class="col-md-6 mx-auto mt-20">
+                    <div class="card">
+                        <div class="card-header font-weight-medium">
+                            Signin
+                        </div>
+                        <div class="card-body">
+                            <form method="POST" action="{% url 'signin' %}">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <label class="required" for="username">Username</label>
+                                    <input type="text" class="form-control" id="username" name="username" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="required" for="password">Password</label>
+                                    <input type="password" class="form-control" id="password" name="password" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block">Signin</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{% static 'js/halfmoon.min.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
