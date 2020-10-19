@@ -3,8 +3,10 @@
         <a href="{% url 'index' %}" class="navbar-brand">
             URL Shortener
         </a>
-        <div class="ml-auto">
-            <a class="btn" href="{% url 'signout' %}">Signout</a>
-        </div>
+        {% if user.is_authenticated %}
+            <div class="ml-auto">
+                <a class="btn" href="{% url 'signout' %}">Signout</a>
+            </div>
+        {% endif %}
     </div>
 </nav>
